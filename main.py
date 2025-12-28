@@ -13,6 +13,7 @@ from src.visualizer import Visualizer
 
 # Tên file dữ liệu
 DATA_FILE =  "data/StudentsPerformance.csv"
+PROCESSED_FILE = "data/processed_data.csv"
 
 
 
@@ -33,6 +34,14 @@ def main():
     print("=" * 30)
 
     df_clean = data_cleaner.clean_data(df)
+
+    print("3. SAVING DATA...")
+    try:
+        # index=False để không lưu thêm cột số thứ tự (0,1,2...) vào file
+        df_clean.to_csv(PROCESSED_FILE, index=False)
+        print(f"✅ Đã lưu file sạch tại: {PROCESSED_FILE}")
+    except Exception as e:
+        print(f"❌ Lỗi khi lưu file: {e}")
 
     # --- BƯỚC 3: VISUALIZATION ---
     print("\n" + "=" * 30)
