@@ -7,12 +7,12 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Import các module của bạn
-import data_loader
-import data_cleaner
-from visualizer import Visualizer
+from src import data_loader
+from src import data_cleaner
+from src.visualizer import Visualizer
 
 # Tên file dữ liệu
-DATA_FILE = "StudentsPerformance.csv"
+DATA_FILE =  "data/StudentsPerformance.csv"
 
 
 
